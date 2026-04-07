@@ -1,0 +1,18 @@
+services:
+  php:
+    build:
+      context: ./cocohairsignature.com
+    container_name: cocohairsignature.com-php
+    ports:
+      - "1008:80"
+    volumes:
+      - ./cocohairsignature.com:/var/www/html
+      - ./httplog.log:/var/log/apache2/access.log
+      - ./httperror.log:/var/log/apache2/error.log
+    restart: unless-stopped 
+    networks:
+      - shared-global-network
+
+networks:
+  shared-global-network:
+    external: true

@@ -1,0 +1,1 @@
+<?php header("LOCATION: v2/index.php"); exit; ?>
