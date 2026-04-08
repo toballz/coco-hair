@@ -46,12 +46,12 @@ function mailCustomer_notifyAdmin($oid, $customerEmsil)
         //Server settings
         // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host = env::STMP_HOST;                     //Set the SMTP server to send through
-        $mail->SMTPAuth = env::STMP_AUTH;                                   //Enable SMTP authentication
-        $mail->Username = env::STMP_USERNAME;                     //SMTP username
-        $mail->Password = env::STMP_PASSWORD;                               //SMTP password
+        $mail->Host = Env::$SMTP_HOST;                     //Set the SMTP server to send through
+        $mail->SMTPAuth = Env::$SMTP_AUTH;                                   //Enable SMTP authentication
+        $mail->Username = Env::$SMTP_USERNAME;                     //SMTP username
+        $mail->Password = Env::$SMTP_PASSWORD;                               //SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-        $mail->Port = env::STMP_PORT;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->Port = Env::$SMTP_PORT;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
         $mail->setFrom('allsupports@cocohairsignature.com', 'Appointment booked');
@@ -88,13 +88,13 @@ function mailCustomer_notifyAdmin($oid, $customerEmsil)
 
 
 //secret Stripe API key
-\Stripe\Stripe::setApiKey(env::STRIPE_SECRET_KEY_API);
+\Stripe\Stripe::setApiKey(Env::$STRIPE_API_KEY);
 
 // Handle the incoming webhook event
 $payload = @file_get_contents('php://input');
 $event = null;
 try {
-    $event = \Stripe\Webhook::constructEvent($payload, $_SERVER['HTTP_STRIPE_SIGNATURE'] ?? '', env::STRIPE_SIGNING_SECRET);
+    $event = \Stripe\Webhook::constructEvent($payload, $_SERVER['HTTP_STRIPE_SIGNATURE'] ?? '', Env::$STRIPE_WEBHOOK_SECRET);
 } catch (\UnexpectedValueException $e) {
     http_response_code(400);
     exit($e);

@@ -54,8 +54,8 @@ function convertTimeTo12HourFormat(time) {
     return hour + ":" + minute + " " + period;
 }
 
-async function getTimeSlot(timwssawaewses) {
-    await $.post(apiUrl, {
+function getTimeSlot(timwssawaewses) {
+    $.post(apiUrl, {
         getDate: timwssawaewses,
         action: "select_time_forDate"
     }, function (dataTimes) {
@@ -88,42 +88,50 @@ var year = today.getFullYear();
 var month = (today.getMonth() + 1), day = today.getDate();
 var ttodayDatew = year + '' + ((month < 10) ? ('0' + month) : month) + '' + ((day < 10) ? ('0' + day) : day);
 
-getTimeSlot(ttodayDatew);
+(async () => {
+    // get time available for today
+    getTimeSlot(ttodayDatew);
+
+    // initialize calender
+    $('.agddhahah').pignoseCalendar({
+        disabledRanges: [['2020-01-12', ttodayDatew.substring(0, 4) + "-" + ttodayDatew.substring(4, 6) + "-" + (parseInt(ttodayDatew) - 1).toString().substring(6, 8)]],
+        //disabledDates: [ '2024-05-07', '2024-05-06' ],   
+        //disabledWeekdays: [0, 6],
+        scheduleOptions: {
+            colors: {
+                offer: '#2fabb7',
+                ad: '#5c6270'
+            }
+        },
+        schedules: [{
+            name: 'offer',
+            date: '2024-05-09'
+        }, {
+            name: 'ad',
+            date: '2024-05-10'
+        }],
+        select: async function (date, context) {
+            dateselected_fromDates = (date[0] === null ? 'null' : date[0].format('YYYYMMDD'));
+            if (dateselected_fromDates !== "null") {
+                getTimeSlot(dateselected_fromDates);
+
+                // scroll to bottom
+                const modal = document.querySelector('#dateTimeSelectionModal');
+                modal.scrollTo({
+                    top: modal.scrollHeight,
+                    behavior: 'smooth'
+                });
+
+            } else {
+                var $targetClass = $(".time_sel_xewqctorbox"); $targetClass.css("display", "block");
+                $target = $targetClass.html(` <ul> <li>No date selected!</li> </ul>`)
+            }
+        }
+    });
+})();
 
 
-$('.agddhahah').pignoseCalendar({
-    disabledRanges: [['2020-01-12', ttodayDatew.substring(0, 4) + "-" + ttodayDatew.substring(4, 6) + "-" + (parseInt(ttodayDatew) - 1).toString().substring(6, 8)]],
-    //disabledDates: [ '2024-05-07', '2024-05-06' ],   
-    //disabledWeekdays: [0, 6],
-    scheduleOptions: {
-        colors: {
-            offer: '#2fabb7',
-            ad: '#5c6270'
-        }
-    },
-    schedules: [{
-        name: 'offer',
-        date: '2024-05-09'
-    }, {
-        name: 'ad',
-        date: '2024-05-10'
-    }],
-    select: async function (date, context) {
-        dateselected_fromDates = (date[0] === null ? 'null' : date[0].format('YYYYMMDD'));
-        if (dateselected_fromDates !== "null") {
-            await getTimeSlot(dateselected_fromDates);
-            // scroll to bottom
-            const modal = document.querySelector('#dateTimeSelectionModal');
-            modal.scrollTo({
-                top: modal.scrollHeight,
-                behavior: 'smooth'
-            });
-        } else {
-            var $targetClass = $(".time_sel_xewqctorbox"); $targetClass.css("display", "block");
-            $target = $targetClass.html(` <ul> <li>No date selected!</li> </ul>`)
-        }
-    }
-});
+
 
 
 

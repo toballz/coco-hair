@@ -80,7 +80,7 @@ if (!function_exists("renderAdminNavItems")) {
                 <div class="offcanvas-body">
                     <div class="admin-nav">
                         <?php renderAdminNavItems($adminNavItems, $currentPath); ?>
-                        <a class="admin-nav-link mt-2" href="logout.php">
+                        <a class="admin-nav-link mt-2" href="pages/logout.php">
                             <i class="bi bi-box-arrow-right"></i>
                             <span>Logout</span>
                         </a>

@@ -188,6 +188,10 @@ if (strlen($orderId) >= 5) {
 }
 
 $isEmailMode = isset($_GET["email"]) && $_GET["email"] === "1";
+$isRedirectedFromStripe = false;
+if (($_GET['redrfrm'] ?? "null") == "stripe") {
+    $isRedirectedFromStripe = true;
+}
 ?>
 <?php if ($isEmailMode) { ?>
     <style>
@@ -650,34 +654,54 @@ $isEmailMode = isset($_GET["email"]) && $_GET["email"] === "1";
                         <?php } ?>
                     </div>
                 </div>
+            <?php } else if ($isRedirectedFromStripe == true) { ?>
+                    <div class="rcpt-empty" style="padding: 80px 20px;">
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <div style="height: 95px; width: 95px; display: inline-block;">
+                                <svg style="width: 100%; height: 100%; animation: spin 1s linear infinite;"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                                    <circle cx="50" cy="50" fill="none" stroke="#d3b05f" stroke-width="4" r="35"
+                                        stroke-dasharray="164.93361431346412 56.97787143782138"
+                                        style="transform-origin: 50px 50px; animation: rotate 1s linear infinite;"></circle>
+                                </svg>
+                            </div>
+                        </div>
+                        <h1 style="margin: 20px 0 8px; font-size: 28px; color: #161616;">Processing Your Payment</h1>
+                        <p style="margin: 0 0 18px; color: #667085; font-size: 16px;">Please wait while we confirm your
+                            appointment...</p>
+                    </div>
+                    <style>
+                        @keyframes rotate {
+                            100% {
+                                transform: rotate(360deg);
+                            }
+                        }
+
+                        @keyframes spin {
+                            0% {
+                                opacity: 1;
+                            }
+
+                            100% {
+                                opacity: 1;
+                            }
+                        }
+                    </style>
+                    <script>
+                        (function () {
+                            setTimeout(function () {
+                                window.location.reload();
+                            }, 3000);
+                        })();
+                    </script>
             <?php } else { ?>
-                <script>
-                    (function () {
-                        var orderId = <?php echo json_encode($orderId); ?>;
-                        if (!orderId) {
-                            return;
-                        }
-
-                        var cookieName = "receipt_reload_" + orderId;
-                        if (document.cookie.indexOf(cookieName + "=1") !== -1) {
-                            return;
-                        }
-
-                        var expiresAt = new Date(Date.now() + (10 * 60 * 1000));
-                        document.cookie = cookieName + "=1; expires=" + expiresAt.toUTCString() + "; path=/; SameSite=Lax";
-
-                        setTimeout(function () {
-                            window.location.reload();
-                        }, 5000);
-                    })();
-                </script>
-                <div class="rcpt-empty">
-                    <h1>Receipt Not Found</h1>
-                    <p>We could not find a paid receipt for this appointment ID.</p>
-                    <a href="<?php echo site::url_hostdir(); ?>/pages/hairlist.php" class="rcpt-btn rcpt-btn-gold">Book
-                        Appointment</a>
-                    <a href="#" class="rcpt-btn" onclick="window.location.reload();return false;">Refresh Receipt</a>
-                </div>
+                    <div class="rcpt-empty">
+                        <h1>Receipt Not Found</h1>
+                        <p>We could not find a paid receipt for this appointment ID.</p>
+                        <a href="<?php echo site::url_hostdir(); ?>/pages/hairlist.php" class="rcpt-btn rcpt-btn-gold">Book
+                            Appointment</a>
+                        <a href="#" class="rcpt-btn" onclick="window.location.reload();return false;">Refresh Receipt</a>
+                    </div>
             <?php } ?>
         </section>
     </main>

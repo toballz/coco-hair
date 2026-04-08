@@ -2,6 +2,7 @@
 $isTestMode = true;
 
 
+
 class tools
 {
 
@@ -54,11 +55,10 @@ class tools
 		}
 	}
 
-
 	public static function stripe_Create_Dynamic_Link_for_payments($cemail, $pprice, $orderID4, $customerName)
 	{
 		global $isTestMode;
-
+		
 		if (!isset($cemail) || !isset($pprice)) {
 			exit("Payment platform error #2896-2407");
 		}
@@ -72,7 +72,7 @@ class tools
 		//
 		require_once dirr . '/3rdparty/stripe-php-master/init.php';
 		//
-		\Stripe\Stripe::setApiKey(env::STRIPE_SECRET_KEY_API);
+		\Stripe\Stripe::setApiKey(Env::$STRIPE_API_KEY);
 		//
 		//
 		//create customer
@@ -105,7 +105,7 @@ class tools
 				],
 			],
 			'mode' => 'payment',
-			'success_url' => site::url_hostdir() . '/pages/receipt.php?orderId=' . $orderID4,
+			'success_url' => site::url_hostdir() . '/pages/receipt.php?redrfrm=stripe&orderId=' . $orderID4,
 			'cancel_url' => site::url_hostdir() . '/pages/hairlist.php'
 		]);
 		return $session->url;

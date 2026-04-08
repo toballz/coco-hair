@@ -1,5 +1,5 @@
 <?php
-$recache = "0x.3sf";
+$recache = "0x.1c2fvfc";
 class site
 {
     const name = "CocoHairSignature, LLC";
@@ -70,8 +70,7 @@ class Env
 
     public static function load()
     {
-        self::$STRIPE_API_KEY = self::get('STRIPE_SECRET_KEY');
-        echo self::$STRIPE_API_KEY;
+        self::$STRIPE_API_KEY = self::get('STRIPE_API_KEY');
         self::$STRIPE_WEBHOOK_SECRET = self::get('STRIPE_WEBHOOK_SECRET');
 
         self::$SMTP_HOST = self::get('SMTP_HOST');
