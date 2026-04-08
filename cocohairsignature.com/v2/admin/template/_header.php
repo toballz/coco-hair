@@ -48,7 +48,7 @@ if (!function_exists("renderAdminNavItems")) {
         </nav>
 
         <div class="admin-sidebar-footer">
-            <a class="btn btn-sm btn-outline-light w-100" href="logout.php">
+            <a class="btn btn-sm btn-outline-light w-100" href="pages/logout.php">
                 <i class="bi bi-box-arrow-right me-1"></i> Logout
             </a>
         </div>

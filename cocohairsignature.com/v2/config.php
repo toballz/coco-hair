@@ -13,9 +13,9 @@ session_start();
 
 
 const dirr = __DIR__;
-
-include(dirr . "/template/_env.php");
-include(dirr . "/template/_db.php");
+ 
 include(dirr . "/template/_site.php");
+Env::load();
 include(dirr . "/template/_functions.php");
+include(dirr . "/template/_db_.php");
 ?>

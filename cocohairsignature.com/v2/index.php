@@ -20,19 +20,19 @@
                         data-bs-interval="3200" data-bs-wrap="true" data-bs-pause="false">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="<?php echo site::url_hostdir(); ?>/img/n/1.jpg" alt="Coco Hair style 1">
+                                <img src="<?php echo site::url_s3Host(); ?>/img/n/1.jpg" alt="Coco Hair style 1">
                             </div>
                             <div class="carousel-item">
-                                <img src="<?php echo site::url_hostdir(); ?>/img/n/2.jpg" alt="Coco Hair style 2">
+                                <img src="<?php echo site::url_s3Host(); ?>/img/n/2.jpg" alt="Coco Hair style 2">
                             </div>
                             <div class="carousel-item">
-                                <img src="<?php echo site::url_hostdir(); ?>/img/n/3.jpg" alt="Coco Hair style 3">
+                                <img src="<?php echo site::url_s3Host(); ?>/img/n/3.jpg" alt="Coco Hair style 3">
                             </div>
                             <div class="carousel-item">
-                                <img src="<?php echo site::url_hostdir(); ?>/img/n/4.jpg" alt="Coco Hair style 4">
+                                <img src="<?php echo site::url_s3Host(); ?>/img/n/4.jpg" alt="Coco Hair style 4">
                             </div>
                             <div class="carousel-item">
-                                <img src="<?php echo site::url_hostdir(); ?>/img/n/5.jpg" alt="Coco Hair style 5">
+                                <img src="<?php echo site::url_s3Host(); ?>/img/n/5.jpg" alt="Coco Hair style 5">
                             </div>
                         </div>
                         <div class="carousel-indicators mb-2">
@@ -73,7 +73,7 @@
                     <div class="card-wrapper">
                         <h4 class="card-title mb-4 h2"><strong>ABOUT ME</strong></h4>
                         <div class="card-box row">
-                            <div class="col-12 col-md-4"><img src="<?php echo site::url_hostdir(); ?>/img/n/coco.jpeg"
+                            <div class="col-12 col-md-4"><img src="<?php echo site::url_s3Host(); ?>/img/n/coco.jpeg"
                                     alt="Coco portrait" class="img-fluid"></div>
                             <div class="col-12 col-md-8 align-items-center d-flex justify-content-center">
                                 <div>HI, I'M COCO! <b
@@ -107,21 +107,21 @@
             <div class="row g-4 mt-0">
                 <div class="col-12 col-md-4 gallery-image">
                     <div class="item-wrapper" data-bs-toggle="modal" data-bs-target="#sRH7Kx4CvK-modal">
-                        <img class="w-100" src="<?php echo site::url_hostdir(); ?>/img/n/dowwenload-4-400x721.jpeg"
+                        <img class="w-100" src="<?php echo site::url_s3Host(); ?>/img/n/dowwenload-4-400x721.jpeg"
                             alt="Braiding style 1" data-bs-slide-to="0" data-bs-target="#lb-sRH7Kx4CvK">
                         <div class="icon-wrapper"><span class="gallery-icon">View</span></div>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 gallery-image">
                     <div class="item-wrapper" data-bs-toggle="modal" data-bs-target="#sRH7Kx4CvK-modal">
-                        <img class="w-100" src="<?php echo site::url_hostdir(); ?>/img/n/thumbnail-6-1080x1478.jpeg"
+                        <img class="w-100" src="<?php echo site::url_s3Host(); ?>/img/n/thumbnail-6-1080x1478.jpeg"
                             alt="Braiding style 2" data-bs-slide-to="1" data-bs-target="#lb-sRH7Kx4CvK">
                         <div class="icon-wrapper"><span class="gallery-icon">View</span></div>
                     </div>
                 </div>
                 <!-- <div class="col-12 col-md-4 gallery-image">
                     <div class="item-wrapper" data-bs-toggle="modal" data-bs-target="#sRH7Kx4CvK-modal">
-                        <img class="w-100" src="<?php echo site::url_hostdir(); ?>/img/n/thumbnail-7-506x824.jpeg"
+                        <img class="w-100" src="<?php echo site::url_s3Host(); ?>/img/n/thumbnail-7-506x824.jpeg"
                             alt="Braiding style 3" data-bs-slide-to="2" data-bs-target="#lb-sRH7Kx4CvK">
                         <div class="icon-wrapper"><span class="gallery-icon">View</span></div>
                     </div>
@@ -138,17 +138,17 @@
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <img class="d-block w-100"
-                                            src="<?php echo site::url_hostdir(); ?>/img/n/dowwenload-4-400x721.jpeg"
+                                            src="<?php echo site::url_s3Host(); ?>/img/n/dowwenload-4-400x721.jpeg"
                                             alt="Braiding style 1">
                                     </div>
                                     <div class="carousel-item">
                                         <img class="d-block w-100"
-                                            src="<?php echo site::url_hostdir(); ?>/img/n/thumbnail-6-1080x1478.jpeg"
+                                            src="<?php echo site::url_s3Host(); ?>/img/n/thumbnail-6-1080x1478.jpeg"
                                             alt="Braiding style 2">
                                     </div>
                                     <!-- <div class="carousel-item">
                                         <img class="d-block w-100"
-                                            src="<?php echo site::url_hostdir(); ?>/img/n/thumbnail-7-506x824.jpeg"
+                                            src="<?php echo site::url_s3Host(); ?>/img/n/thumbnail-7-506x824.jpeg"
                                             alt="Braiding style 3">
                                     </div> -->
                                 </div>
@@ -185,7 +185,7 @@
                     <div class="row align-items-center row">
                         <div class="col-12 col-md-4 px-0 py-0">
                             <div class="">
-                                <img class="img-fluid" src="<?php echo site::url_hostdir(); ?>/img/n/thumbnail-695x704.jpg"
+                                <img class="img-fluid" src="<?php echo site::url_s3Host(); ?>/img/n/thumbnail-695x704.jpg"
                                     alt="Coco service preview">
                             </div>
                         </div>
@@ -201,14 +201,14 @@
                                     <div style="margin-right: 12px;" class="soc-item">
                                         <a href="https://www.facebook.com/cocohairsignature/" target="_blank"
                                             rel="noopener noreferrer" style="width:30px;display: block;">
-                                            <img src="<?php echo site::url_hostdir(); ?>/img/n/facebooklogo.png?-695x704.jpg"
+                                            <img src="<?php echo site::url_s3Host(); ?>/img/n/facebooklogo.png?-695x704.jpg"
                                                 alt="Facebook" style="width:100%">
                                         </a>
                                     </div>
                                     <div class="soc-item">
                                         <a href="https://instagram.com/cocohairsignature" target="_blank"
                                             rel="noopener noreferrer" style="width:30px;display: block;">
-                                            <img src="<?php echo site::url_hostdir(); ?>/img/n/instagramlogo.png?-695x704.jpg"
+                                            <img src="<?php echo site::url_s3Host(); ?>/img/n/instagramlogo.png?-695x704.jpg"
                                                 alt="Instagram" style="width:100%">
                                         </a>
                                     </div>

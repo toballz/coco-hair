@@ -13,22 +13,17 @@ session_start();
 
 
 const dirr = __DIR__;
-
-include(dirr . "/../template/_env.php");
-include(dirr . "/../template/_db.php");
+ 
 include(dirr . "/../template/_site.php");
+Env::load();
 include(dirr . "/../template/_functions.php");
-
+include(dirr . "/../template/_db_.php");
 
 function admin_is_logged_in(): bool
 {
     return !empty($_SESSION["admin_logged_in"]);
 }
-
-function admin_redirect(string $path): void
-{
-    exit;
-}
+ 
 
 $adminCurrentScript = basename((string) ($_SERVER["PHP_SELF"] ?? ""));
 $adminPublicScripts = ["login.php", "logout.php"];

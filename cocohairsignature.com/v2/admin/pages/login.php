@@ -12,8 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $passwordInput = (string) ($_POST["password"] ?? "");
 
 
-    
-    if ($usernameInput == env::ADMIN_USERNAME && $passwordInput == env::ADMIN_PASSWORD) {
+
+    if ($usernameInput == Env::$ADMIN_USERNAME && $passwordInput == Env::$ADMIN_PASSWORD) {
         session_regenerate_id(true);
         $_SESSION["admin_logged_in"] = true;
         $_SESSION["admin_username"] = $usernameInput;
@@ -42,7 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                         <?php if ($loginError !== "") { ?>
                             <div class="alert alert-danger">
-                                <?php echo htmlspecialchars($loginError, ENT_QUOTES, "UTF-8"); ?></div>
+                                <?php echo htmlspecialchars($loginError, ENT_QUOTES, "UTF-8"); ?>
+                            </div>
                         <?php } ?>
 
                         <form method="post">
@@ -60,6 +61,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             </div>
 
                             <button type="submit" class="btn btn-dark w-100">Login</button>
+                            <a class="btn btn-outline-dark w-100 mt-5" href="<?= site::url_hostdir(); ?>">Back to main
+                                website</a>
                         </form>
                     </div>
                 </div>

@@ -1,0 +1,17 @@
+services:
+  php:
+    build:
+      context: ./cocohairsignature.com
+    container_name: php-html
+    restart: unless-stopped 
+    networks:
+      - shared-global-network
+    env_file:
+      - _env/live/stripe.env
+      - _env/live/smtp.env
+      - _env/live/admin.env
+      - _env/live/db.env
+
+networks:
+  shared-global-network:
+    external: true

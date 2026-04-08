@@ -1,10 +1,10 @@
 <?php
-include("config.php");
+include("../config.php");
  
 $_SESSION['admin_logged_in']=[];
 $_SESSION = [];
  
 session_destroy();
 
-admin_redirect("/v2/admin/pages/login.php");
+header("Location: /v2/admin/pages/login.php"); 
 ?>
