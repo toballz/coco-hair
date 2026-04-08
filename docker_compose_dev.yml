@@ -2,13 +2,7 @@ services:
   php:
     build:
       context: ./cocohairsignature.com
-    container_name: cocohairsignature.com-php
-    ports:
-      - "1008:80"
-    volumes:
-      - ./cocohairsignature.com:/var/www/html
-      #- ./httplog.log:/var/log/apache2/access.log
-      #- ./httperror.log:/var/log/apache2/error.log
+    container_name: php-html
     restart: unless-stopped
     networks:
       - shared-global-network
@@ -17,6 +11,8 @@ services:
       - _env/dev/smtp.env
       - _env/dev/admin.env
       - _env/dev/db.env
+    volumes:
+      - ./cocohairsignature.com:/var/www/html
 
 networks:
   shared-global-network:

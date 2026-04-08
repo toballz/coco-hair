@@ -1,4 +1,5 @@
 var bH = document.baseURI + "", apiUrl = bH + "/core/api.php";
+var dateselected_fromDates = null, hairstyle = null, ttimeesele = null, dateSelecta = null;
 
 
 var loader = {
@@ -30,9 +31,7 @@ var loader = {
     }
 }
 
-
-
-var dateselected_fromDates = null, hairstyle = null, ttimeesele = null, dateSelecta = null;
+// convert time from 24hr format to 12hr format with am/pm
 function convertTimeTo12HourFormat(time) {
     var hour = parseInt(time.substring(0, 2));
     var minute = time.substring(2);
@@ -54,6 +53,7 @@ function convertTimeTo12HourFormat(time) {
     return hour + ":" + minute + " " + period;
 }
 
+// get time slot for a given date and display in the modal
 function getTimeSlot(timwssawaewses) {
     $.post(apiUrl, {
         getDate: timwssawaewses,
@@ -82,7 +82,7 @@ function getTimeSlot(timwssawaewses) {
     });
 }
 
-
+// get today's date and format it as YYYYMMDD for the calendar initialization
 var today = new Date();
 var year = today.getFullYear();
 var month = (today.getMonth() + 1), day = today.getDate();
@@ -134,7 +134,7 @@ var ttodayDatew = year + '' + ((month < 10) ? ('0' + month) : month) + '' + ((da
 
 
 
-
+// format phone number input while typing to only allow numbers and limit length to 14 (for international numbers)
 function formatPhoneNumber(input) {
     let formattedValue = input.value.replace(/\D/g, '');
     input.value = formattedValue;
