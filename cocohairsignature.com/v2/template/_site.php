@@ -9,9 +9,17 @@ class site
 
     private static function protocol()
     {
-        $https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
-        return $https ? 'https://' : 'http://';
+        if (
+            (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ||
+            $_SERVER['SERVER_PORT'] == 443 ||
+            (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https')
+        ) {
+            return 'https://';
+        }
+
+        return 'http://';
     }
+    
     public static function url_domain()
     {
         // returns domain[:port]
