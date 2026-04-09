@@ -5,7 +5,10 @@ RewriteBase /
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
-RewriteRule ^a/s/r/(.*)$ 3rdparty/flutteradmin/$1 [QSA,L]
+RewriteEngine On
+#RewriteRule ^a/s/r/(.*)$ 3rdparty/flutteradmin/$1 [QSA,L]
+RewriteCond %{QUERY_STRING} ^ords=([^&]+)$
+RewriteRule ^pages/receipt\.php$ /v2/pages/receipt.php?orderId=%1 [R=301,L]
 
 ErrorDocument 404 /v2/pages/404.php
  
