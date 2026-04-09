@@ -92,7 +92,7 @@ class tools
 						'product_data' => [
 							'name' => site::name,
 						],
-						'unit_amount' => 0, //$realpprice, // Amount in cents
+						'unit_amount' => $realpprice, // Amount in cents
 					],
 					'quantity' => 1,
 				],
