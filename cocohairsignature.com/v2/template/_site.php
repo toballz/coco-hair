@@ -7,6 +7,11 @@ class site
     const phone = "+1(224) 440-1819";
 
 
+    private static function protocol()
+    {
+        $https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
+        return $https ? 'https://' : 'http://';
+    }
     public static function url_domain()
     {
         // returns domain[:port]
@@ -14,15 +19,10 @@ class site
     }
     public static function url_hostdir()
     {
-        $https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
-        $protocol = $https ? 'https://' : 'http://';
-
-        return $protocol . self::url_domain() . "/v2";
+        return self::protocol() . self::url_domain() . "/v2";
     }
     public static function url_fullUri($clean)
     {
-        $https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
-        $protocol = $https ? 'https://' : 'http://';
 
         $uri = $_SERVER['REQUEST_URI'] ?? '/';
 
@@ -31,13 +31,13 @@ class site
             $uri = parse_url($uri, PHP_URL_PATH);
         }
 
-        return $protocol . self::url_domain() . $uri;
+        return self::protocol() . self::url_domain() . $uri;
 
     }
 
     public static function url_s3Host($clean = true)
     {
-        return "http://" . self::url_domain();
+        return self::protocol() . self::url_domain();
     }
 }
 
@@ -55,10 +55,10 @@ class Env
     public static $ADMIN_USERNAME;
     public static $ADMIN_PASSWORD;
 
-    PUBLIC STATIC $DB_HOST;
-    PUBLIC STATIC $DB_USERNAME;
-    PUBLIC STATIC $DB_PASSWORD;
-    PUBLIC STATIC $DB_NAME;
+    public static $DB_HOST;
+    public static $DB_USERNAME;
+    public static $DB_PASSWORD;
+    public static $DB_NAME;
 
 
 
