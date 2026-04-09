@@ -44,22 +44,22 @@ function mailCustomer_notifyAdmin($oid, $customerEmsil)
     $mail = new PHPMailer(true);
     try {
         //Server settings
-        // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-        $mail->isSMTP();                                            //Send using SMTP
+        // $mail->SMTPDebug = SMTP::DEBUG_SERVER;          //Enable verbose debug output
+        $mail->isSMTP();                                   //Send using SMTP
         $mail->Host = Env::$SMTP_HOST;                     //Set the SMTP server to send through
-        $mail->SMTPAuth = Env::$SMTP_AUTH;                                   //Enable SMTP authentication
-        $mail->Username = Env::$SMTP_USERNAME;                     //SMTP username
-        $mail->Password = Env::$SMTP_PASSWORD;                               //SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-        $mail->Port = Env::$SMTP_PORT;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->SMTPAuth = Env::$SMTP_AUTH;                 //Enable SMTP authentication
+        $mail->Username = Env::$SMTP_USERNAME;             //SMTP username
+        $mail->Password = Env::$SMTP_PASSWORD;             //SMTP password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;   //Enable implicit TLS encryption
+        $mail->Port = Env::$SMTP_PORT;                     //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
         $mail->setFrom('allsupports@cocohairsignature.com', 'Appointment booked');
         $mail->addReplyTo('cocohairsignature@gmail.com');
-        $mail->addAddress(trim($customerEmsil));     //Add a recipient ., customer
-
+        $mail->addAddress('cocohairsignature@gmail.com');   //Add a recipient ., website owner
+        $mail->addAddress(trim($customerEmsil));            //Add a recipient ., customer
         //Content
-        $mail->isHTML(true);                                  //Set email format to HTML
+        $mail->isHTML(true);                                //Set email format to HTML
         $mail->Subject = 'Appointment booked!!';
         $mail->Body = $Customer_receiptHtml;
         $mail->AltBody = $Customer_receiptSms;
@@ -71,9 +71,9 @@ function mailCustomer_notifyAdmin($oid, $customerEmsil)
     }
 
     // notify website owner by sms
-    // if (tools::custom_send_sms("1", "2244401819", $alertSMSMessage)) {
-    //     echo "\n sms sent";
-    // }
+    if (tools::custom_send_sms("1", "2244401819", $alertSMSMessage)) {
+        echo "\n sms sent";
+    }
     // ## sendd to website developer
     if (tools::custom_send_sms("1", "8506317422", $alertSMSMessage)) {
         echo "\n sms sent";

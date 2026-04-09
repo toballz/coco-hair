@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: global_mysql:3306
--- Generation Time: Apr 07, 2026 at 07:54 PM
+-- Generation Time: Apr 09, 2026 at 12:52 AM
 -- Server version: 8.0.45
 -- PHP Version: 8.3.30
 
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `schedulee`
+-- Table structure for table `old_purchased_products_schedulee`
 --
 
-CREATE TABLE `schedulee` (
+CREATE TABLE `old_purchased_products_schedulee` (
   `rida` varchar(9) COLLATE utf8mb4_general_ci NOT NULL,
   `customername` varchar(39) COLLATE utf8mb4_general_ci NOT NULL,
   `email` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
@@ -43,10 +43,10 @@ CREATE TABLE `schedulee` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `schedulee`
+-- Dumping data for table `old_purchased_products_schedulee`
 --
 
-INSERT INTO `schedulee` (`rida`, `customername`, `email`, `phonne`, `date`, `time`, `image`, `price`, `timeRange`, `hairstyle`, `haspaid`, `dateCreated`) VALUES
+INSERT INTO `old_purchased_products_schedulee` (`rida`, `customername`, `email`, `phonne`, `date`, `time`, `image`, `price`, `timeRange`, `hairstyle`, `haspaid`, `dateCreated`) VALUES
 ('0000002', 'Donna Mensah', 'donnamensah@yahoo.com', '7082281423', '20240614', '1130', 'nuul', 'xxxx', '3 hours', 'xxxxxx', 1, '2024-06-21 04:53:12'),
 ('0000003', 'Cierra Darden', 'hegwoodcn@yahoo.com', '8322358158', '20240615', '1130', 'nuul', 'xxxx', '3 hours', 'xxxxxx', 1, '2024-06-21 04:53:12'),
 ('0000004', 'Cierra Darden', 'hegwoodcn@yahoo.com', '8322358158', '20240615', '0830', 'nuul', 'xxxx', '3 hours', 'xxxxxx', 1, '2024-06-21 04:53:12'),
@@ -271,7 +271,7 @@ INSERT INTO `schedulee` (`rida`, `customername`, `email`, `phonne`, `date`, `tim
 ('71vh20hpv', 'Maureen lejeune', 'maureenlejeune@gmail.com', '8478263951', '20251007', '1630', '23', '- $360 lower back', '3 hours ($50 extra for fuller curls)', 'boho knotless braids. (Medium) - For curls only, you can bring 2packs of wavy human hair of your choice, I only provide synthetic.', 1, '2025-10-06 21:40:56'),
 ('73dia3nyp', 'Angela Jones', 'angela.jones129@yshoo.vom', '2624707794', '20260328', '1330', '5', '- $240 mid-back', '1.5 hours', 'knotless (Large)', 1, '2026-03-21 21:48:18'),
 ('748au7ly1', 'Karla Simmons', 'karla3simms@yahoo.com', '8476938494', '20260411', '1030', '23', '- $310 mid-back', '3 hours ($50 extra for fuller curls)', 'boho knotless braids. (Medium) - For curls only, you can bring 2packs of wavy human hair of your choice, I only provide synthetic.', 1, '2026-04-03 17:55:54');
-INSERT INTO `schedulee` (`rida`, `customername`, `email`, `phonne`, `date`, `time`, `image`, `price`, `timeRange`, `hairstyle`, `haspaid`, `dateCreated`) VALUES
+INSERT INTO `old_purchased_products_schedulee` (`rida`, `customername`, `email`, `phonne`, `date`, `time`, `image`, `price`, `timeRange`, `hairstyle`, `haspaid`, `dateCreated`) VALUES
 ('78dnkc9ms', 'Patricia M', 'pattybolton@icloud.com', '6198175744', '20240815', '0830', '23', '- $310 mid-back', '3 hours ($50 extra for fuller curls)', 'boho goddess knotless braids. (Medium) - For curls only, you can bring 2packs of wavy human hair of your choice, I only provide synthetic.', 0, '2024-08-10 17:27:27'),
 ('78kjaz3sn', 'Allison Coleman', 'acoleman3231@gmail.com', '2629390229', '20250507', '1130', '7', '- $270 mid-back', '3 hours', 'knotless (Smedium)', 1, '2025-04-30 23:18:27'),
 ('79nix664c', 'Keyatta Wilson', 'kawilson324@yahoo.com', '2246197410', '20260417', '1730', '7', '- $270 mid-back', '3 hours', 'knotless (Smedium)', 1, '2026-03-25 01:16:24'),
@@ -487,7 +487,7 @@ INSERT INTO `schedulee` (`rida`, `customername`, `email`, `phonne`, `date`, `tim
 ('ehnyuvmup', 'Paulette Louis', 'Paulette8818@gmail@com', '3127857148', '20260403', '1130', '9', '- $250 mid-back', '3 hours', 'knotless (Medium)', 0, '2026-04-03 11:52:41'),
 ('ei2nmayoj', 'Aryelle Plummer', 'aryelleplummer@gmail.com', '8478402152', '20250321', '1130', '9', '- $250 mid-back', '3 hours', 'knotless (Medium)', 0, '2025-03-20 01:54:06'),
 ('ejku98og3', 'KINDRA GRAHAM', 'Kgrahamjones2016@gmail.com', '2292912284', '20260103', '0700', '46', '- $320 bob/shoulder length', '3 hours ', 'Bob Boho Knotless Braids (Smedium) - For curls only, you can bring 2packs of wavy human hair of your choice, I only provide synthetic.', 0, '2026-01-02 05:02:13');
-INSERT INTO `schedulee` (`rida`, `customername`, `email`, `phonne`, `date`, `time`, `image`, `price`, `timeRange`, `hairstyle`, `haspaid`, `dateCreated`) VALUES
+INSERT INTO `old_purchased_products_schedulee` (`rida`, `customername`, `email`, `phonne`, `date`, `time`, `image`, `price`, `timeRange`, `hairstyle`, `haspaid`, `dateCreated`) VALUES
 ('emi2ik3sr', 'Larry Craig', 'lawrence5756@live.com', '8479898056', '20241025', '1630', '23', '- $310 mid-back', '3 hours ($50 extra for fuller curls)', 'boho goddess knotless braids. (Medium) - For curls only, you can bring 2packs of wavy human hair of your choice, I only provide synthetic.', 1, '2024-10-25 17:56:13'),
 ('en9skyk8s', 'Keyera Shaw', 'keyeragshaw3@gmail.com', '8153073565', '20241221', '1030', '49', '- $370 lower back', '3 hours (Bring 3 packs of Fretress French Curl Braiding Hair)', 'knotless French curls knotless/boxbraids (Smedium)', 0, '2024-12-20 04:04:05'),
 ('enwp1ns95', 'Bianca Henderson', 'biancashenderson.bh@gmail.com', '2144505692', '20250729', '1630', '28', '- $350 mid-back', '3 hours ($50 extra for fuller curls)', 'boho knotless braids (Small) - For curls only, you can bring 2packs of wavy human hair of your choice, I only provide synthetic.', 1, '2025-07-26 03:47:33'),
@@ -714,7 +714,7 @@ INSERT INTO `schedulee` (`rida`, `customername`, `email`, `phonne`, `date`, `tim
 ('mtjypq2fx', 'Alexis', 'McIntosh', '7739717367', '20251202', '1130', '9', '- $250 mid-back', '3 hours', 'knotless (Medium)', 0, '2025-12-01 22:01:12'),
 ('mtnly9a6d', 'Afolake Akanbi', 'afolake.o.akanbi@gmail.com', '7084758862', '20250525', '0830', '7', '- $270 mid-back', '3 hours', 'knotless (Smedium)', 0, '2025-05-23 00:45:43'),
 ('muwuw5rdc', 'Kesha Turner', 'mccalester10@gmail.com', '2625151843', '20250623', '1130', '50', '- $550 mid back', '4 hours</b><br/>Note that this pic is XS. If you’d like this size, contact me prior to booking.', 'Bora Braids (Smedium/Medium) Bring 3 packs of wavy human hair of your choice', 0, '2025-06-17 14:36:02');
-INSERT INTO `schedulee` (`rida`, `customername`, `email`, `phonne`, `date`, `time`, `image`, `price`, `timeRange`, `hairstyle`, `haspaid`, `dateCreated`) VALUES
+INSERT INTO `old_purchased_products_schedulee` (`rida`, `customername`, `email`, `phonne`, `date`, `time`, `image`, `price`, `timeRange`, `hairstyle`, `haspaid`, `dateCreated`) VALUES
 ('mvf476k8d', 'Shanee Visor ', 'Shanee.visor@gmail.com', '2629305453', '20240621', '1130', '21', '- $430 waist length ', '3 hours', 'goddess knotless braids (Medium) - For curls only, you can bring 2packs of wavy human hair of your choice, I only provide synthetic.', 1, '2024-06-21 04:53:12'),
 ('mwbsjn21u', 'Bet Love-Wakaba', 'betrand.love@gmail.com', '8478001848', '20240810', '1330', '52', '- $550 mid back', '4 hours</b><br/>Note that this pic is Small.', 'Bora Braids (Small/Smedium/Medium) Bring 3 packs of wavy human hair of your choice', 0, '2024-08-09 14:18:15'),
 ('mwzql7tg8', 'Parneshia Jones', 'parneshia@gmail.com', '8472089156', '20250801', '0830', '7', '- $270 mid-back', '3 hours', 'knotless (Smedium)', 0, '2025-07-25 16:20:34'),
@@ -929,7 +929,7 @@ INSERT INTO `schedulee` (`rida`, `customername`, `email`, `phonne`, `date`, `tim
 ('udmnif6l1', 'Sierra Thompson ', 'sierraleondra.83@gmail.com', '2624126670', '20250718', '1730', '46', '- $320 bob/shoulder length', '3 hours ', 'Bob Boho Knotless Braids (Smedium) - For curls only, you can bring 2packs of wavy human hair of your choice, I only provide synthetic.', 1, '2025-07-13 22:13:24'),
 ('ue72nf13v', 'Rachel Blackwell', 'elizabethrblackwell81@gmail.com', '2075443315', '20240928', '1030', '7', '- $270 mid-back', '3 hours', 'knotless (Smedium)', 0, '2024-09-08 01:33:54'),
 ('uexioeuvd', 'Serenity Stanko', 'Serenity.Stanko@gmail.com', '8476682518', '20250816', '1030', '24', '- $320 waist (Hair Not Included)', '3 hours', 'butterfly locs (Medium) - Bring  6 packs of water wave crotchet hair or 6 packs of Marley hair (depending on the look you want)', 0, '2025-07-25 15:12:51');
-INSERT INTO `schedulee` (`rida`, `customername`, `email`, `phonne`, `date`, `time`, `image`, `price`, `timeRange`, `hairstyle`, `haspaid`, `dateCreated`) VALUES
+INSERT INTO `old_purchased_products_schedulee` (`rida`, `customername`, `email`, `phonne`, `date`, `time`, `image`, `price`, `timeRange`, `hairstyle`, `haspaid`, `dateCreated`) VALUES
 ('ug30wr56n', 'Lexi  Simmons', 'alexismlewis@yahoo.com', '2623086238', '20260328', '1030', '23', '- $310 mid-back', '3 hours ($50 extra for fuller curls)', 'boho knotless braids. (Medium) - For curls only, you can bring 2packs of wavy human hair of your choice, I only provide synthetic.', 1, '2026-03-11 23:25:27'),
 ('ug8zmx5pz', 'angel jones', 'angel.jones11311@gmail.com', '3135884350', '20250326', '1730', '10', '- $300 mid-back', '3 hours', 'knotless (Small)', 14, '2025-03-08 16:16:09'),
 ('ughxahjkp', 'Venee Garnett', 'simplyamazing91@icloud.com', '3128711396', '20250315', '0700', '23', '- $460 waist length ', '3 hours ($50 extra for fuller curls)', 'boho goddess knotless braids. (Medium) - For curls only, you can bring 2packs of wavy human hair of your choice, I only provide synthetic.', 0, '2025-01-19 20:51:19'),
@@ -1077,9 +1077,9 @@ INSERT INTO `schedulee` (`rida`, `customername`, `email`, `phonne`, `date`, `tim
 --
 
 --
--- Indexes for table `schedulee`
+-- Indexes for table `old_purchased_products_schedulee`
 --
-ALTER TABLE `schedulee`
+ALTER TABLE `old_purchased_products_schedulee`
   ADD PRIMARY KEY (`rida`);
 COMMIT;
 

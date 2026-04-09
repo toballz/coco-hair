@@ -2,23 +2,23 @@
 include("../config.php");
 
 $loginError = "";
-
-if (admin_is_logged_in()) {
-    header("Location: ./index.php");
-}
+ 
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $usernameInput = trim((string) ($_POST["username"] ?? ""));
+    $usernameInput = strtolower(trim((string) ($_POST["username"] ?? "")));
     $passwordInput = (string) ($_POST["password"] ?? "");
 
+    $realUsername = strtolower(Env::$ADMIN_USERNAME);
+    $realPassword = Env::$ADMIN_PASSWORD;
+ 
 
-
-    if ($usernameInput == Env::$ADMIN_USERNAME && $passwordInput == Env::$ADMIN_PASSWORD) {
-        session_regenerate_id(true);
+    if ($usernameInput == $realUsername && $passwordInput == $realPassword) {
+        //session_regenerate_id(true);
         $_SESSION["admin_logged_in"] = true;
         $_SESSION["admin_username"] = $usernameInput;
         header("Location: ./index.php");
-    }
+        exit;
+    } 
 
     $loginError = "Invalid login details.";
 }
