@@ -3,10 +3,13 @@ require_once('./stripe-php-master/init.php');
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+$alertOwner = false;
 
 function mailCustomer_notifyAdmin($oid, $customerEmsil)
 {
-    global $db;
+    global $db, $alertOwner;
+
+
     require 'PHPMailer/src/Exception.php';
     require 'PHPMailer/src/PHPMailer.php';
     require 'PHPMailer/src/SMTP.php';
@@ -54,9 +57,12 @@ function mailCustomer_notifyAdmin($oid, $customerEmsil)
         $mail->Port = Env::$SMTP_PORT;                     //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
-        $mail->setFrom('allsupports@cocohairsignature.com', 'Appointment booked');
-        $mail->addReplyTo('cocohairsignature@gmail.com');
-        $mail->addAddress('cocohairsignature@gmail.com');   //Add a recipient ., website owner
+        $mail->setFrom('elisha4rm-COCOHAIRSIGNATURE.COM@yahoo.com', 'CocoHairSignature Appointment booking');
+        // $mail->addReplyTo('cocohairsignature@gmail.com');
+        if ($alertOwner) {
+            //Add a recipient ., website owner
+            $mail->addAddress('cocohairsignature@gmail.com');
+        }
         $mail->addAddress(trim($customerEmsil));            //Add a recipient ., customer
         //Content
         $mail->isHTML(true);                                //Set email format to HTML
@@ -71,7 +77,7 @@ function mailCustomer_notifyAdmin($oid, $customerEmsil)
     }
 
     // notify website owner by sms
-    if (tools::custom_send_sms("1", "2244401819", $alertSMSMessage)) {
+    if ($alertOwner && tools::custom_send_sms("1", "2244401819", $alertSMSMessage)) {
         echo "\n sms sent";
     }
     // ## sendd to website developer

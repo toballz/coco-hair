@@ -13,6 +13,8 @@ services:
       - _env/dev/db.env
     volumes:
       - ./cocohairsignature.com:/var/www/html
+    ports:
+      - "1003:80"
 
 networks:
   shared-global-network:
