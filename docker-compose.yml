@@ -1,16 +1,17 @@
 services:
-  php:
+  coco_php:
     build:
       context: ./cocohairsignature.com
-    container_name: php-html
+    container_name: coco_php
     restart: unless-stopped 
     networks:
       - shared-global-network
     env_file:
-      - _env/live/stripe.env
-      - _env/live/smtp.env
-      - _env/live/admin.env
-      - _env/live/db.env
+      - _env/${STAGE}/stripe.env
+      - _env/${STAGE}/smtp.env
+      - _env/${STAGE}/admin.env
+      - _env/${STAGE}/db.env
+
 
 networks:
   shared-global-network:

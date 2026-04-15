@@ -1,0 +1,6 @@
+services:
+  coco_php:
+    volumes:
+      - ./cocohairsignature.com:/var/www/html
+    ports:
+      - "1003:80"
