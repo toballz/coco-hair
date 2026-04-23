@@ -529,9 +529,10 @@ while ($row = $result->fetch_assoc()) {
                         </div>
 
                         <div class="afudf" style="position:relative">
-                            <h4 style="color:#000;margin-top:12px">HAIR INQUIRIES </h4>
+                            <p style="color:#000;margin-top:13px;font-size:28px">Hair Policies - <b>PLEASE READ</b> </p>
+                            <br/><br/> 
                             <div
-                                style="display:flex;justify-content:center;position:absolute;width:100%;z-index:111;top:27px">
+                                style="display:flex;justify-content:center;position:absolute;width:100%;z-index:111;top:60px">
                                 <div class="gsjht" style="position: relative;left:auto;transform:none;top:auto;"><svg
                                         width="800px" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">

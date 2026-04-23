@@ -7,7 +7,11 @@
     <title>Home</title>
     <meta
         description="Coco Hair Signature, LLC is a braiding service located in Grayslake Illinois. We provide the best braiding services at your appointment. Book now!" />
-</head>
+    <style>
+        .hero-carousel{background: transparent;}
+        .hero-carousel .carousel-item img{background: transparent;}
+    </style>
+    </head>
 
 <body>
     <?php include(dirr . "/template/header.php"); ?>
@@ -190,7 +194,7 @@
                             </div>
                         </div>
                         <div class="col-12 col-md px-0 py-0">
-                            <div class="card-box px-4 py-3">
+                            <div class="card-box px-4 py-3" style="background-color: #fff;">
                                 <h5 class="card-title m-0 mb-3 h4"><strong>SERVICE</strong></h5>
                                 <p class="mb-0">I provide the following braiding services: BoxBraids, Knotless Braids,
                                     Goddess Locs,
