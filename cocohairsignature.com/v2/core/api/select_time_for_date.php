@@ -9,7 +9,23 @@ function api_select_time_for_date(array $post)
     }
 
     $thisDAte = trim($post["getDate"]);
-    $thisDAte_dayInWeek = strtolower(date("l", strtotime($thisDAte)));
+    $normalizedDateKey = preg_replace("/[^0-9]/", "", $thisDAte);
+    $parsedDate = null;
+
+    if (preg_match("/^\d{8}$/", $normalizedDateKey)) {
+        $parsedDate = DateTime::createFromFormat("Ymd", $normalizedDateKey);
+    }
+
+    if (!$parsedDate instanceof DateTime) {
+        $timestamp = strtotime($thisDAte);
+        if ($timestamp === false) {
+            return $u;
+        }
+        $parsedDate = new DateTime();
+        $parsedDate->setTimestamp($timestamp);
+    }
+
+    $thisDAte_dayInWeek = strtolower($parsedDate->format("l"));
 
     $tg1 = $db->query("SELECT `description` FROM `availability` WHERE `namer` = 'override' LIMIT 1");
     $overrideRow = mysqli_fetch_assoc($tg1);
@@ -35,7 +51,8 @@ function api_select_time_for_date(array $post)
     $times_to_show_from_weekly = array_map("trim", explode(",", $reqgularSchedule_fetch_assoc->$thisDAte_dayInWeek));
 
     foreach ($overrided_fetch_assoc as $ovrrd) {
-        if (isset($ovrrd->date) && isset($ovrrd->time) && $ovrrd->date === $thisDAte) {
+        $overrideDateKey = isset($ovrrd->date) ? preg_replace("/[^0-9]/", "", (string) $ovrrd->date) : "";
+        if ($overrideDateKey !== "" && isset($ovrrd->time) && $overrideDateKey === $normalizedDateKey) {
             $times_to_show_from_weekly = array_map("trim", explode(",", $ovrrd->time));
             break;
         }

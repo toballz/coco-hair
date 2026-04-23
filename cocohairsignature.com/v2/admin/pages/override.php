@@ -96,8 +96,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $normalizedTimes = normalizeOverrideTimes($timeInput, $errors);
             if (count($errors) === 0) {
                 if ($normalizedTimes === "") {
-                    unset($overrideMap[$selectedDate]); // Leave empty for unavailability
-                    $flashSuccess = "Override removed for " . dateKeyToLabel($selectedDate) . " (unavailable).";
+                    $overrideMap[$selectedDate] = "";
+                    $flashSuccess = "Marked " . dateKeyToLabel($selectedDate) . " as unavailable.";
                 } else {
                     $overrideMap[$selectedDate] = $normalizedTimes;
                     $flashSuccess = "Override saved for " . dateKeyToLabel($selectedDate) . ".";
@@ -160,6 +160,7 @@ foreach ($overrideMap as $dateKey => $timeCsv) {
         "date" => $dateKey,
         "dateLabel" => dateKeyToLabel($dateKey),
         "time" => $timeCsv,
+        "timeLabel" => ($timeCsv === "" ? "Unavailable" : $timeCsv),
     ];
 }
 ?>
@@ -373,7 +374,7 @@ foreach ($overrideMap as $dateKey => $timeCsv) {
                         <div class="ov-item">
                             <div class="fw-semibold"><?php echo adminEsc($item["dateLabel"]); ?></div>
                             <div class="small text-muted-soft mb-2"><?php echo adminEsc($item["date"]); ?></div>
-                            <div class="mb-2"><?php echo adminEsc($item["time"]); ?></div>
+                            <div class="mb-2"><?php echo adminEsc($item["timeLabel"]); ?></div>
                             <form method="post" class="d-inline">
                                 <input type="hidden" name="delete_override" value="1">
                                 <input type="hidden" name="delete_date" value="<?php echo adminEsc($item["date"]); ?>">
