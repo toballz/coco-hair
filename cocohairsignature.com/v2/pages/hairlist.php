@@ -571,6 +571,7 @@ while ($row = $result->fetch_assoc()) {
                                             href="mailto:cocohairsignature@gmail.com">cocohairsignature@gmail.com</a>
                                         regarding a consultation to ensure that you receive the best services for your
                                         hair. My consultations are free and typically take no less than 15 minutes.
+                                        I take pictures of my work for the business. I will ask you for permission before I do so. Once you agree, that is taken as consent to post your pictures on the business' social media
                                     </div>
                                 </div>
                                 <div class="qyrbry-box" style="flex:1;padding-top:6px">
