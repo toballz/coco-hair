@@ -567,10 +567,10 @@ while ($row = $result->fetch_assoc()) {
                                 <div class="qyrbry-box" style="flex:1;padding-top:6px">
                                     <div>Make sure your hair is free of texturized sores. If you have any sores or open
                                         wounds on your scalp YOU WILL NOT BE SERVICED! If you are unsure about edges,
-                                        undercut, soft hair, etc, please email me at <a
-                                            href="mailto:cocohairsignature@gmail.com">cocohairsignature@gmail.com</a>
-                                        regarding a consultation to ensure that you receive the best services for your
-                                        hair. My consultations are free and typically take no less than 15 minutes.
+                                        undercut, soft hair, etc, please text me at <a
+                                            href="tel:2244401819">+1 (224) 440-1819</a>
+                                        regarding a consultation to ensure that you receive the best services for your hair.
+                                        <br/><hr/>
                                         You agree that I may take photos and videos of your hair for promotional use, though I will always ask for your verbal consent beforehand. If you do not want your photo used, please state clearly when requested. Once you agree, the pictures will be posted for the business' socials.
                                     </div>
                                 </div>
